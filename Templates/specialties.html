@@ -1,0 +1,136 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Links -->
+    {% include 'include-files/links.html' %}
+
+    <style>
+        input[type="CheckBox"] {
+            background-color: transparent;
+            box-shadow: none !important;
+            height: 18px !important;
+            width: 30px !important;
+            text-align: left;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header-end -->
+
+    <div class="popular_places_area" style="padding: 30px 0;">
+        <div class="container">
+            <!-- <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Popular Places</h3>
+                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit
+                            hella wolf moon beard words.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="type_check-foods" class="checkboxes">
+                        <h3>LOẠI HÌNH</h3>
+                        {% for type in types %}
+                            <div class="checkbox">
+                                <input class="filter-checkbox" type="checkbox" name="check" data-filter="type_spec" 
+                                value="{{type.type_id}}">&nbsp;
+
+                                {{type.name}}
+                            </div>
+                            
+                            <!-- <div class="checkbox">
+                                <a href="places"> Tất cả </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-vh"> Văn hoá </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-tn"> Thiên nhiên </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-lq"> Làng Quê </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-nn"> Du lịch Nông nghiệp </a>
+                            </div> -->
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row" id="filteredSpecialties">
+                        <p class="ajaxLoader">Loading...</p>
+                        {% for spec in specialties %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single_place">
+                                <div class="thumb">
+                                    <img src="/media/pics/specialties/{{spec.img2}}" alt="" style="height: 160px;">
+                                </div>
+                                <div class="place_info text-center" style="padding: 10px 20px 10px 20px;">
+                                    <a href='specialties/{{spec.spec_id}}'>
+                                        <h4>{{spec.spec_name}}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="#">More Places</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <input type="file" id="i_file" value="">
+    <input type="button" id="i_submit" value="Submit">
+    <br>
+    <img src="" width="200" style="display:none;" />
+    <br>
+    <div id="disp_tmp_path"></div> -->
+
+
+    <!-- FOOTER -->
+    {% include 'include-files/footer.html' %}
+
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--### CHAT BOT ###-->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+</body>
+
+</html>

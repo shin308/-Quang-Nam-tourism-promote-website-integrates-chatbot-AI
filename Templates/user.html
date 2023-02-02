@@ -1,0 +1,149 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Links -->
+    {% include 'include-files/links.html' %}
+
+    <style>
+        input[type="CheckBox"] {
+            background-color: transparent;
+            box-shadow: none !important;
+            height: 18px !important;
+            width: 30px !important;
+            text-align: left;
+            margin: 5px 0;
+        }
+
+        /* .require-rating {
+            margin-left: 50px;
+        }
+
+        .require-rating p {
+            color: black;
+        }
+
+        .require-rating p a {
+            color: #FF4A52;
+            text-decoration: underline;
+        } */
+        .logout {
+            padding: 10px 15px;
+            background-color: #FF4A52;
+            border: 1px solid #000;
+            margin-top: 80px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .re-password {
+            margin-top: 50px;
+        }
+
+        .user-information {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .change-password {
+            padding: 10px 30px;
+            background-color: #5f58c7;
+            color: #fff;
+            margin-top: 15px;
+        }
+
+        label {
+            color: #000;
+            font-size: 16px;
+        }
+
+        input {
+            outline: none;
+            border-radius: 3px;
+            width: 300px;
+            border: 1px solid rgb(71, 70, 70);
+            padding: 6px;
+        }
+
+        .input-password {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header end -->
+
+    <div class="container align-items-center" style="margin-bottom: 100px;">
+        <div class="user-information">
+            <h1>Chào bạn {{user.last_name}} {{user.first_name}}</h1>
+            <h3>Số điện thoại: {{user.username}}</h3>
+            <h3>Email: {{user.email}}</h3>
+        </div>
+
+        {% if messages %}
+        <ul class="messages" style="margin-top: 100px">
+            {% for message in messages %}
+            <div class="alert alert-success">
+                <p>{{message}}</p>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="re-password">
+            <h3>Thay đổi mật khẩu:</h3>
+            <form action="/user/{{user.id}}" method="post">
+                {% csrf_token %}
+                <div class="input-password">
+                    <label for=""> Nhập mật khẩu cũ của bạn</label>
+                    <br>
+                    <input type="password" name="old-pass">
+                </div>
+                <div class="input-password">
+                    <label for=""> Nhập mật khẩu mới của bạn</label>
+                    <br>
+                    <input type="password" name="new-pass">
+                </div>
+                <div class="input-password">
+                    <label for=""> Nhập lại mật khẩu mới</label>
+                    <br>
+                    <input type="password" name="cof-new-pass">
+                </div>
+                <button class="btn btn--radius-2 btn--blue change-password" type="submit">Thay đổi</button>
+            </form>
+        </div>
+        <a href="/logout">
+            <button class="logout">
+                Đăng xuất
+            </button>
+        </a>
+    </div>
+
+
+    <!-- Footer -->
+    {% include 'include-files/footer.html' %}
+    <!--### CHAT BOT ###-->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+</body>
+
+</html>

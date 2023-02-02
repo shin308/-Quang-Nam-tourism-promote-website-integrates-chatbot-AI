@@ -1,0 +1,84 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'include-files/links-admin.html' %}
+
+    <style>
+        .total-items{
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 3px;
+            margin-top: 80px;
+            color: #fff;
+        }
+        .dashboard-list{
+            margin-bottom: 100px;
+        }
+        .total-users{
+            background-color: rgb(22, 65, 145);
+        }
+        .total-destinations{
+            background-color: rgb(99, 34, 34);
+        }
+        .total-tours{
+            background-color: rgb(91, 102, 31);
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'include-files/header-admin.html' %}
+
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h1>Admin page</h1>
+        </div>
+        <div class="col-md-12 dashboard-list">
+            <div class="col-md-4">
+                <div class="total-users total-items">
+                    <span><h2>{{users}}</h2> Total Users</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-destinations total-items">
+                    <span><h2>{{dest}}</h2> Total Destinations</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-tours total-items">
+                    <span><h2>{{dest_detail}}</h2> Total Tours</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-tours total-items">
+                    <span><h2>{{booked}}</h2> Total Booked</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-users total-items">
+                    <span><h2>{{places}}</h2> Total Places</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="total-destinations total-items">
+                    <span><h2>{{foods}}</h2> Total Specialties</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'include-files/scripts-admin.html' %}
+
+</body>
+
+</html>

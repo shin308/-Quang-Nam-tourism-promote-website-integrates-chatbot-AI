@@ -1,0 +1,59 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>QN Travel</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% include 'include-files/links.html' %}
+</head>
+
+<body>
+
+  <!-- header-start -->
+  {% include 'include-files/header.html' %}
+
+  <!--### About QN-->
+  <div class="container">
+    <div class="about-qn">
+      <h1>Về Quảng Nam</h1>
+      <p>Tỉnh Quảng Nam nằm ở trung bộ của Việt Nam (từ 14057'10'' đến 16003'50'' vĩ độ Bắc,
+        107012'50'' đến 108044'20'' kinh độ Đông), cách thủ đô Hà Nội 860 km về phía Nam,
+        cách thành phố Hồ Chí Minh 865 km về phía Bắc. Phía Bắc giáp: Tỉnh Thừa Thiên Huế và
+        thành phố Đà Nẵng. Phía Nam giáp: tỉnh Quảng Ngãi. Phía Tây giáp: tỉnh Kon Tum và nước
+        Cộng hòa Dân chủ Nhân dân Lào. Phía Đông giáp: biển Đông.
+      </p>
+      <p>Quảng Nam nằm ở trung tâm của khu vực Đông Nam Á, với bán kính 3.200 km bao phủ khu vực
+        Nam Trung Quốc, Hồng Kông, Đài Loan về phía Bắc; Singapore, Malaysia về phía Nam; Philippine,
+        Brunei về phía Đông; Myanmar, Thái Lan, Lào, Campuchia về phía Tây.
+      </p>
+
+      <div class="img-about--qn" style="background-size: cover;">
+        <img src="/static/img/about/tungtang_907754563.jpg" alt="about" style="width: 100%;">
+      </div>
+
+      <p>Tỉnh Quảng Nam gồm 18 đơn vị trong đó: có 15 huyện, 01 thị xã và 02 thành phố.</p>
+      <p>09 huyện miền núi: Đông Giang, Tây Giang, Nam Giang, Phước Sơn, Hiệp Đức, Tiên Phước, Nam Trà My,
+        Nông Sơn và Bắc Trà My
+      </p>
+      <p>06 huyện đồng bằng: Đại Lộc, Duy Xuyên, Thăng Bình, Quế Sơn, Núi Thành và Phú Ninh</p>
+      <p>01 thị xã: Điện Bàn</p>
+      <p>02 Thành phố: Tam Kỳ và Hội An</p>
+      <p>Tỉnh lỵ: Thành phố Tam Kỳ.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {% include 'include-files/footer.html' %}
+
+  <!--### CHAT BOT ###-->
+  {% include 'include-files/chatbot.html' %}
+
+  {% include 'include-files/scripts.html' %}
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+{% load static %}{% static "images" as baseUrl %}
+<!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-1 col-lg-1">
+                                <div class="logo">
+                                    <a href="/admin-home/dashboard">
+                                        <img src="{% static 'img/user.png' %}" alt="" style="width: 50px;">
+                                        <h3>Admin</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-11 col-lg-11">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="dashboard">Dashboard</a></li>
+                                            <li><a href="users">Users</a></li>
+                                            <li><a href="destination">Destination</a></li>
+                                            <li><a href="destination-details">Tours</a></li>
+                                            <li><a href="places-list">Places</a></li>
+                                            <li><a href="foods-list">Foods</a></li>
+                                            <li><a href="type-places">Type Places</a></li>
+                                            <li><a href="type-foods-business">Type Foods</a></li>
+                                            <li><a href="bookings">Booking</a></li>
+                                            {% if user.is_authenticated %}
+                                            <li>Hello, {{user.first_name}}</li>
+                                            <li><a href="logout-admin">logout</a></li>
+                                            {%endif%}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->

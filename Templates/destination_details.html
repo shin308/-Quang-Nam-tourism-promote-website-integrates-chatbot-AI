@@ -1,0 +1,343 @@
+{% load static %} {% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Travelo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'include-files/links.html' %}
+    <style>
+        .star-rating {
+            line-height: 32px;
+            font-size: 1.25em;
+            margin-top: 15px;
+            margin-left: 15px;
+            padding: 15px 0;
+        }
+
+        .star-rating .fa-star {
+            color: yellow;
+        }
+
+        .submit-rating {
+            margin-right: 100px;
+        }
+
+        .submit-rating input {
+            position: absolute;
+            left: 0;
+            background-color: #FF4A52;
+        }
+
+        .submit-rating input:hover {
+            background-color: #1EC6B6;
+        }
+
+        .require-rating {
+            margin-left: 50px;
+        }
+
+        .require-rating p {
+            color: black;
+        }
+
+        .require-rating p a {
+            color: #FF4A52;
+            text-decoration: underline;
+        }
+
+        .all-comments .user-comments {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .all-comments .user-comments .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .all-comments .user-comments .text {
+            margin-left: 10px;
+            width: 100%;
+            border-bottom: 1px solid #a7a1a1;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header-end -->
+    {% if messages %}
+    <ul class="messages" style="margin-top: 100px">
+        {% for message in messages %}
+        <div class="alert alert-success">
+            <strong>Success!</strong> {{message}}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="destination_banner_wrap overlay">
+        <div class="destination_text text-center">
+            <h3>{{dest.dest_name}}</h3>
+        </div>
+    </div>
+
+    <div class="destination_details_info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="destination_info">
+                        <h3>Chi tiết tour</h3>
+                        <p>{{dest.desc}}</p>
+                        {% if dest.day1 != 'NULL'%}
+                        <h3>Chương trình tour</h3>
+                        <div class="single_destination">
+                            <h4>Ngày 1</h4>
+                            <P>{{dest.day1}}</P>
+                        </div>
+                        {% endif %}
+                        {% if dest.day2 != 'NULL'%}
+                        <div class="single_destination">
+                            <h4>Ngày 2</h4>
+                            <P>{{dest.day2}}</P>
+                        </div>
+                        {% endif %}
+                        {% if dest.day3 != 'NULL'%}
+                        <div class="single_destination">
+                            <h4>Ngày 3</h4>
+                            <P>{{dest.day3}}</P>
+                        </div>
+                        {%endif%}
+                        {% if dest.day4 != 'NULL'%}
+                        <div class="single_destination">
+                            <h4>Ngày 4</h4>
+                            <P>{{dest.day4}}</P>
+                        </div>
+                        {%endif%}
+                        {% if dest.day5 != 'NULL'%}
+                        <div class="single_destination">
+                            <h4>Ngày 5</h4>
+                            <P>{{dest.day5}}</P>
+                        </div>
+                        {%endif%}
+                        {% if dest.day6 != 'NULL'%}
+                        <div class="single_destination">
+                            <h4>Ngày 6</h4>
+                            <P>{{dest.day6}}</P>
+                        </div>
+                        {%endif%}
+                        <div class="single_destination">
+                            <h3>Giá: {{dest.price}} VNĐ</h3>
+                        </div>
+                        <h3>Ngày khởi hành: {{dest.trip_date}}</h3>
+                    </div>
+                    <div class="bordered_1px"></div>
+                    <div class="contact_join">
+                        <h3>Đặt ngay!!</h3>
+
+
+                        <div class="row">
+
+
+                            <div class="col-lg-12">
+                                <div class="submit_btn">
+                                    <!--                                        <input type="submit" name="submit" class="boxed-btn4" value="Book Here">-->
+                                    <!--                                        <button class="boxed-btn4" type="submit" href='pessanger_detail'>Book here</button>-->
+                                    {% if user.is_authenticated %}
+                                        {% if dest1.num_bookings == 0 %}
+                                            <h3>Tour đã hết chỗ</h3>
+                                        {% else %}
+                                            <button class="boxed-btn4" type="button"
+                                                onclick="window.location.href='pessanger_detail_def/{{dest.dest_name}}'">Đặt
+                                                tour tại đây
+                                            </button>
+                                        {% endif %}
+                                    {% else %}
+                                        <div class="require-rating">
+                                            <p>Bạn cần phải <a href="/login">Đăng nhập</a> hoặc <a href="/register">Đăng
+                                                    ký</a> tài khoản để đặt tour.</p>
+                                        </div>
+                                    {% endif %}
+                                    <p>Số chỗ còn lại: {{dest1.num_bookings}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rating -->
+                    <div class="rating">
+                        <form class="form-horizontal" role="search" method="post"
+                            action="{% url 'destination_details' dest.dest_id %}" onsubmit="return validateForm()"
+                            name="ratingForm">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="row">
+                                        <div class="col-lg-14">
+                                            <div class="star-rating" style="color: #094691;">
+                                                <span>Đánh giá: </span>
+                                                <span class="fa fa-star-o" data-rating="1"></span>
+                                                <span class="fa fa-star-o" data-rating="2"></span>
+                                                <span class="fa fa-star-o" data-rating="3"></span>
+                                                <span class="fa fa-star-o" data-rating="4"></span>
+                                                <span class="fa fa-star-o" data-rating="5"></span>
+
+                                                {% if rate_flag %}
+                                                <input type="hidden" name="rating" class="rating-value"
+                                                    value="{{tour_rating}}">
+                                                {% else %}
+                                                <input type="hidden" name="rating" class="rating-value" value="0">
+                                                {% endif %}
+                                                {% csrf_token %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comments" style="width: 100%;">
+                                        <!-- <textarea type="text" style="width: 100%;" name="comment" placeholder="Bình luận ở đây..."> -->
+                                        <textarea name="comment" id="" cols="30" rows="3" placeholder="Nhập bình luận"
+                                            style="font-size: 16px; width: 100%;"></textarea>
+                                    </div>
+
+                                    <div class="submit-rating" style="width: 100%;">
+                                        {% if user.is_authenticated %}
+                                        <input type="submit" class="button" style="border-radius: 5px;" value="Rating">
+                                        {% else %}
+                                        <div class="require-rating">
+                                            <p>Bạn cần phải <a href="/login">Đăng nhập</a> hoặc <a href="/register">Đăng
+                                                    ký</a> tài khoản mới để được đánh giá.</p>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="all-comments" style="width: 100%; margin-top: 80px;">
+                                        <h3>Bình luận và Đánh giá:</h3>
+                                        {%for rate in ratings%}
+                                        <div class="user-comments">
+                                            <div class="logo">
+                                                <img src="{% static 'img/user.png' %}" alt="">
+                                            </div>
+                                            <div class="text">
+                                                <div class="rate">
+                                                    {% if user.id == rate.user_id %}
+                                                    <span>{{rate.rating}} <i class="fa fa-star-o"
+                                                            style="color: yellow;"></i> <i
+                                                            class="fa-solid fa-circle-check" style="color: blue;"></i> {{rate.time_rate}}
+                                                    </span>
+                                                    {% else %}
+                                                    <span>{{rate.rating}} <i class="fa fa-star-o"
+                                                            style="color: yellow;"></i> {{rate.time_rate}}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="comment">
+                                                    <p>{{rate.comment}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {%endfor%}
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- newletter_area_start  -->
+    <div class="newletter_area overlay">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="newsletter_text">
+                                <h4>Subscribe Our Newsletter</h4>
+                                <p>Subscribe newsletter to get offers and about
+                                    new places to discover.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="mail_form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-9 col-md-8">
+                                        <div class="newsletter_field">
+                                            <input type="email" placeholder="Your mail">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="newsletter_btn">
+                                            <button class="boxed-btn4 " type="submit">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- newletter_area_end  -->
+
+    {% include 'include-files/footer.html' %}
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+    <script>
+        var $star_rating = $('.star-rating .fa');
+
+        var SetRatingStar = function () {
+            return $star_rating.each(function () {
+                if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+                    return $(this).removeClass('fa-star-o').addClass('fa-star');
+                } else {
+                    return $(this).removeClass('fa-star').addClass('fa-star-o');
+                }
+            });
+        };
+        $star_rating.on('click', function () {
+            $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+            return SetRatingStar();
+        });
+
+        SetRatingStar();
+        // $(document).ready(function () {
+
+        // });
+
+        function validateForm() {
+            var x = document.forms["ratingForm"]["rating"].value;
+            if (x == "0") {
+                alert("Invalid Input");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

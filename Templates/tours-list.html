@@ -1,0 +1,163 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Links -->
+    {% include 'include-files/links.html' %}
+
+    <style>
+        input[type="CheckBox"] {
+            background-color: transparent;
+            box-shadow: none !important;
+            height: 18px !important;
+            width: 30px !important;
+            text-align: left;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header-end -->
+
+    <div class="popular_places_area" style="padding: 30px 0;">
+        <div class="container">
+            <!-- <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Popular Places</h3>
+                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit
+                            hella wolf moon beard words.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="type_check-foods" class="checkboxes">
+                        <h3>LOẠI HÌNH</h3>
+                        {% for type in types %}
+                        <div class="checkbox">
+                            <input class="filter-checkbox" type="checkbox" name="check" data-filter="country"
+                                value="{{type.country}}">&nbsp;
+
+                            {{type.country}}
+                        </div>
+
+                        <!-- <div class="checkbox">
+                                <a href="places"> Tất cả </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-vh"> Văn hoá </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-tn"> Thiên nhiên </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-lq"> Làng Quê </a>
+                            </div>
+                            <div class="checkbox">
+                                <a href="check-places-nn"> Du lịch Nông nghiệp </a>
+                            </div> -->
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row" id="filteredTours">
+                        <p class="ajaxLoader">Loading...</p>
+                        <div class="row" id="filteredTours">
+                            {%for dest in tours%}
+                            <div class="col-lg-4 col-md-6 tour-box">
+                                <div class="single_place">
+                                    <div class="thumb">
+                                        <img src="/media/pics/tours/{{dest.img1}}" alt="" style="height: 180px;">
+                                        <a href='destination_details/{{dest.dest_id}}' methods="GET"
+                                            class="prise">{{dest.price}} VNĐ</a>
+                                    </div>
+                                    <div class="place_info">
+                                        <a href='destination_details/{{dest.dest_id}}'>
+                                            <h3>{{dest.dest_name}}</h3>
+                                        </a>
+                                        <p>{{dest.country}}</p>
+                                        <div class="rating_days d-flex justify-content-between">
+                                            <span class="d-flex justify-content-center align-items-center">
+
+                                                {{dest.rating}} <i class="fa fa-star"></i>
+                                                <!-- <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i> -->
+
+                                            </span>
+                                            <div class="days">
+                                                <i class="fa fa-clock-o"></i>
+                                                <a href='destination_details/{{dest.dest_id}}'>{{dest.days}} Days</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-lg-12">
+                                <div class="more_place_btn text-center">
+                                    <button id="loadMorePrivate" data-total="{{total_data}}" data-limit="2"
+                                        data-name="{{dest_name}}" class="boxed-btn4">Load more</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="#">More Places</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <input type="file" id="i_file" value="">
+    <input type="button" id="i_submit" value="Submit">
+    <br>
+    <img src="" width="200" style="display:none;" />
+    <br>
+    <div id="disp_tmp_path"></div> -->
+
+
+    <!-- FOOTER -->
+    {% include 'include-files/footer.html' %}
+
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--### CHAT BOT ###-->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+</body>
+
+</html>

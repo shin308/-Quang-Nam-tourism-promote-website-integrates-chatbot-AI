@@ -1,0 +1,341 @@
+{% load static %}{% static "images" as baseUrl %}
+<!-- <a href='http://127.0.0.1:8000/' target='_blank' class='food'>Cổng thông tin du lịch Quảng Nam</a> -->
+<!-- link that opens popup -->
+<!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
+<!-- JS here -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/ajax-form.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/scrollIt.js' %}"></script>
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/nice-select.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/gijgo.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+
+
+
+<!--contact js-->
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    $('#datepicker').datepicker({
+        iconsLibrary: 'fontawesome',
+        icons: {
+            rightIcon: '<span class="fa fa-caret-down"></span>'
+        }
+    });
+
+    $("#chatbot_ai").click(function () {
+        $("#chatbot_ai").toggle('scale');
+        $(".chat-box").toggle('scale');
+    })
+
+    $(".chat-box-toggle").click(function () {
+        $("#chatbot_ai").toggle('scale');
+        $(".chat-box").toggle('scale');
+    })
+
+    // $(".food").click(function(){
+    //     var rawText = $(this).val()
+    //     var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="/media/pics/user.png" alt="img"></p>';
+    //     $("#chat-input").val("");
+    //     $("#chatbox").append(userHtml);
+    //     document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    //     $.get("/get", { msg: rawText }).done(function (data) {
+    //         var botHtml = '<p class="botText"><img src="/media/pics/bot.png" alt="img"><span>' + data + '</span></p>';
+    //         $("#chatbox").append(botHtml);
+    //         document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    //     });
+    //     $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+    // })
+
+    function addValue(value) {
+        var rawText = value + " Hội An"
+        var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="/media/pics/user.png" alt="img"></p>';
+        $("#chat-input").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        $.get("/get", { msg: rawText }).done(function (data) {
+            var botHtml = '<p class="botText"><img src="/media/pics/bot.png" alt="img"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        });
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+    }
+
+    function getBotResponse() {
+        var rawText = $("#chat-input").val();
+        //getResponse()
+        var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="/media/pics/user.png" alt="img"></p>';
+        $("#chat-input").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        $.get("/get", { msg: rawText }).done(function (data) {
+            var data1 = data.split('and')
+            //console.log(data.split('and'))
+            //var data1 = ['chào', 'xin chào']
+            for (let i = 0; i < data1.length; i++) {
+                var botHtml = '<p class="botText"><img src="/media/pics/bot.png" alt="img"><span>' + data1[i] + '</span></p>';
+                $("#chatbox").append(botHtml);
+            }
+            // var botHtml = '<p class="botText"><img src="/media/pics/bot.png" alt="img"><span>' + data1[0] + '</span></p>';
+            //$("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }, "json");
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+    }
+
+    $("#chat-input").keypress(function (e) {
+        if (e.which == 13) {
+            getBotResponse();
+        }
+    });
+    $("#chat-submit").click(function () {
+        getBotResponse();
+    })
+
+    //filter places
+    $(document).ready(function () {
+        $(".ajaxLoader").hide();
+        $(".filter-checkbox").on('click', function () {
+            var _filterObj = {};
+            $(".filter-checkbox").each(function (index, ele) {
+                var _filterVal = $(this).val();
+                var _filterKey = $(this).data('filter');
+                _filterObj[_filterKey] = Array.from(document.querySelectorAll('input[data-filter=' + _filterKey + ']:checked')
+                ).map(function (el) {
+                    return el.value;
+                })
+            })
+
+            $.ajax({
+                url: '/filter-places',
+                data: _filterObj,
+                dataType: 'json',
+                beforeSend: function () {
+                    $(".ajaxLoader").show();
+                },
+                success: function (res) {
+                    console.log(res);
+                    $("#filteredPlaces").html(res.data);
+                    $(".ajaxLoader").hide();
+                }
+            })
+
+            $.ajax({
+                url: '/filter-specialties',
+                data: _filterObj,
+                dataType: 'json',
+                beforeSend: function () {
+                    $(".ajaxLoader").show();
+                },
+                success: function (res) {
+                    console.log(res);
+                    $("#filteredSpecialties").html(res.data);
+                    $(".ajaxLoader").hide();
+                }
+            })
+
+            $.ajax({
+                url: '/filter-tours',
+                data: _filterObj,
+                dataType: 'json',
+                beforeSend: function () {
+                    $(".ajaxLoader").show();
+                },
+                success: function (res) {
+                    console.log(res);
+                    $("#filteredTours").html(res.data);
+                    $(".ajaxLoader").hide();
+                }
+            })
+        })
+
+        //Load more tours home
+        $("#loadMore").on("click", function(){
+                var _currentProducts = $(".tour-box").length
+                var _limit = $(this).attr('data-limit')
+                var _total = $(this).attr('data-total')
+                // console.log(currentProducts, limit, total)
+
+                //Start Ajax
+                $.ajax({
+                    url: '/load-more-tours',
+                    data: {
+                        limit: _limit,
+                        offset: _currentProducts
+                    },
+                    dataType: 'json',
+                    beforeSend: function(){
+                        $("#loadMore").attr("disableb", true)
+                    },
+                    success: function(res){
+                        $('#filteredTours').append(res.data)
+                        $("#loadMore").attr("disableb", false)
+
+                        var _totalShowing = $(".tour-box").length
+                        if(_totalShowing == _total){
+                            $("#loadMore").remove()
+                        }
+                    }
+                })
+            })
+
+            //Load more private tours
+            $("#loadMorePrivate").on("click", function(){
+                var _currentProducts = $(".tour-box").length
+                var _limit = $(this).attr('data-limit')
+                var _total = $(this).attr('data-total')
+                var _name = $(this).attr('data-name')
+                // console.log(_currentProducts, _limit, _total)
+
+                //Start Ajax
+                $.ajax({
+                    url: '/load-more-private-tours',
+                    data: {
+                        limit: _limit,
+                        offset: _currentProducts,
+                        name: _name
+                    },
+                    dataType: 'json',
+                    beforeSend: function(){
+                        $("#loadMorePrivate").attr("disableb", true)
+                    },
+                    success: function(res){
+                        $('#filteredTours').append(res.data)
+                        $("#loadMorePrivate").attr("disableb", false)
+
+                        var _totalShowing = $(".tour-box").length
+                        if(_totalShowing == _total){
+                            $("#loadMorePrivate").remove()
+                        }
+                    }
+                })
+            })
+    })
+
+    $('#datepicker').datepicker({
+        iconsLibrary: 'fontawesome',
+        icons: {
+            rightIcon: '<span class="fa fa-caret-down"></span>'
+        }
+    });
+
+    // Slide show Place detail
+    var listImages = document.querySelectorAll(".list_image div")
+    var iconPrev = document.querySelector(".prev")
+    var iconBack = document.querySelector(".back")
+    var imageWrap = document.querySelector(".image_wrap img")
+
+    var currentIndex = 0;
+
+    function setCurrent(index) {
+        currentIndex = index;
+        imageWrap.src = listImages[currentIndex].querySelector('img').src;
+
+        listImages.forEach(item => {
+            item.classList.remove('active1');
+        })
+        listImages[currentIndex].classList.add('active1');
+    }
+
+    listImages.forEach((image, index) => {
+        image.addEventListener('click', function () {
+            setCurrent(index)
+        })
+    })
+
+    iconBack.addEventListener('click', function () {
+        if (currentIndex == 0) {
+            currentIndex = listImages.length - 1;
+        } else {
+            currentIndex--;
+        }
+        setCurrent(currentIndex)
+    })
+    iconPrev.addEventListener('click', function () {
+        if (currentIndex == listImages.length - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        setCurrent(currentIndex)
+    })
+
+    document.addEventListener('keydown', function (e) {
+        if (e.which == 37) {
+            if (currentIndex == 0) {
+                currentIndex = listImages.length - 1;
+            } else {
+                currentIndex--;
+            }
+        }
+        setCurrent(currentIndex)
+    })
+
+    document.addEventListener('keydown', function (e) {
+        if (e.which == 39) {
+            if (currentIndex == listImages.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+        }
+        setCurrent(currentIndex)
+    })
+
+    // var $star_rating = $('.star-rating .fa');
+
+    // var SetRatingStar = function () {
+    //     return $star_rating.each(function () {
+    //         if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+    //             return $(this).removeClass('fa-star-o').addClass('fa-star');
+    //         } else {
+    //             return $(this).removeClass('fa-star').addClass('fa-star-o');
+    //         }
+    //     });
+    // };
+    // $star_rating.on('click', function () {
+    //     $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+    //     return SetRatingStar();
+    //     console.log('hello')
+    // });
+
+    // SetRatingStar();
+    // $(document).ready(function () {
+
+    // });
+
+    // function validateForm() {
+    //     var x = document.forms["ratingForm"]["rating"].value;
+    //     if (x == "0") {
+    //         alert("Invalid Input");
+    //         return false;
+    //     }
+    // }
+
+
+</script>

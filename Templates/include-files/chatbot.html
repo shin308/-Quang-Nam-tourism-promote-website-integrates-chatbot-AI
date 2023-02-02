@@ -1,0 +1,40 @@
+{% load static %}{% static "images" as baseUrl %}
+<!--### CHAT BOT ###-->
+<div class="chat-box">
+    <div class="chat-box-header">
+        Du lịch Quảng Nam
+        <span class="chat-box-toggle">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-box-overlay">
+        </div>
+        <div class="chat-logs">
+            <div id="chatbox">
+                <p class="botText">
+                    <img src="/media/pics/bot.png" alt="img">
+                    <span>Chào bạn!</span>
+                </p>
+
+                <!-- <p class="userText">
+            <span>Hi! I'm Asura and heartly welcoming </span>
+            <img src="/static/bot.png" alt="img">
+          </p> -->
+            </div>
+        </div>
+        <!--chat-log -->
+    </div>
+    <div id="userInput" class="chat-input">
+        <input type="text" id="chat-input" placeholder="Bạn muốn hỏi gì?" />
+        <button type="submit" class="chat-submit" name="msg" id="chat-submit">
+            <span class="material-symbols-outlined">
+                send
+            </span>
+        </button>
+    </div>
+</div>
+
+<button id="chatbot_ai" class="chatbot_ai-message">
+    <img src="/media/pics/bot.png" alt="chatbot">
+</button>

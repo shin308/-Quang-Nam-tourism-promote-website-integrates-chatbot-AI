@@ -1,0 +1,29 @@
+{% for place in data %}
+<div class="col-lg-4 col-md-6">
+    <div class="single_place">
+        <div class="thumb">
+            <img src="/media/pics/places/{{place.img1}}" alt="" style="height: 160px;">
+        </div>
+        <div class="place_info">
+            <a href='places/{{place.place_id}}'>
+                <h4>{{place.dest_name}}</h4>
+            </a>
+            <p>{{place.district}}</p>
+            <div class="rating_days d-flex justify-content-between">
+                <span class="d-flex justify-content-center align-items-center">
+                    {{place.rating}}<i class="fa fa-star-o" data-rating="1"
+                        style="margin-left: 3px;"></i>
+                </span>
+                <!-- <span class="d-flex justify-content-center align-items-center">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <a href="#">(20 Review)</a>
+                </span> -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

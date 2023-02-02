@@ -1,0 +1,275 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'include-files/links.html' %}
+    <style>
+        .star-rating {
+            line-height: 32px;
+            font-size: 1.25em;
+            margin-top: 15px;
+            margin-left: 15px;
+            padding: 15px 0;
+        }
+
+        .star-rating .fa-star {
+            color: yellow;
+        }
+
+        .submit-rating {
+            margin-right: 100px;
+        }
+
+        .submit-rating input {
+            position: absolute;
+            left: 0;
+            background-color: #FF4A52;
+        }
+
+        .submit-rating input:hover {
+            background-color: #1EC6B6;
+        }
+
+        .require-rating {
+            margin-left: 50px;
+        }
+
+        .require-rating p {
+            color: black;
+        }
+
+        .require-rating p a {
+            color: #FF4A52;
+            text-decoration: underline;
+        }
+
+        .all-comments .user-comments {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .all-comments .user-comments .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .all-comments .user-comments .text {
+            margin-left: 10px;
+            width: 100%;
+            border-bottom: 1px solid #a7a1a1;
+        }
+        .information-place p{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header-end -->
+
+    <div class="container">
+        <div class="container1">
+            <div class="main">
+                <span class="control prev">
+                    <i class='bx bxs-chevron-right'></i>
+                </span>
+                <span class="control back">
+                    <i class='bx bxs-chevron-left'></i>
+                </span>
+                <div class="image_wrap">
+                    <img src="/media/pics/places/{{place.img1}}" alt="image">
+                    <div class="name">
+                        <p>{{place.dest_name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list_image">
+                <div class="active1">
+                    <img src="/media/pics/places/{{place.img1}}" alt="image">
+                </div>
+                <div>
+                    <img src="/media/pics/places/{{place.img2}}" alt="image">
+                </div>
+                <div>
+                    <img src="/media/pics/places/{{place.img3}}" alt="image">
+                </div>
+                <div>
+                    <img src="/media/pics/places/{{place.img4}}" alt="image">
+                </div>
+                <div>
+                    <img src="/media/pics/places/{{place.img5}}" alt="image">
+                </div>
+            </div>
+        </div>
+
+        <div class="information-place">
+            <h3>Giới thiệu: </h3>
+            <div class="information-contact col-md-12" style="display: flex; margin-bottom: 30px;">
+                <div class="information-contact--left col-md-6">
+                    <p>Giá: {{place.price}} VNĐ</p>
+                    <p>Số điện thoại: {{place.phone}}</p>
+                    <p>Thời gian tham quan: 60 phút</p>
+                </div>
+                <div class="information-contact--right col-md-6">
+                    <span>Mở cửa: {{place.open_time}} - Đóng cửa: {{place.close_time}}</span>
+                    <p>Email: {{place.email}}</p>
+                    <p>Địa chỉ: {{place.address}}</p>
+                </div>
+            </div>
+            <div class="information-details">
+                <p>{{place.desc}}</p>
+            </div>
+            <!-- RATING PLACE -->
+            <div class="rating">
+                <form class="form-horizontal" role="search" method="post" action="/places/{{place.place_id}}"
+                    onsubmit="return validateForm()" name="ratingForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-lg-14">
+                                    <div class="star-rating" style="color: #094691;">
+                                        <span>Đánh giá: </span>
+                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                        <span class="fa fa-star-o" data-rating="5"></span>
+
+                                        {% if rate_flag %}
+                                        <input type="hidden" name="rating" class="rating-value"
+                                            value="{{place_rating}}">
+                                        {% else %}
+                                        <input type="hidden" name="rating" class="rating-value" value="0">
+                                        {% endif %}
+                                        {% csrf_token %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comments" style="width: 100%;">
+                                <!-- <textarea type="text" style="width: 100%;" name="comment" placeholder="Bình luận ở đây..."> -->
+                                <textarea name="comment" id="" cols="30" rows="3" placeholder="Nhập bình luận"
+                                    style="font-size: 16px; width: 100%;"></textarea>
+                            </div>
+
+                            <div class="submit-rating" style="width: 100%;">
+                                {% if user.is_authenticated %}
+                                <input type="submit" class="button" style="border-radius: 5px;" value="Rating">
+                                {% else %}
+                                <div class="require-rating">
+                                    <p>Bạn cần phải <a href="/login">Đăng nhập</a> hoặc <a href="/register">Đăng
+                                            ký</a> tài khoản mới để được đánh giá.</p>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="all-comments" style="width: 100%; margin-top: 80px;">
+                                {% if messages %}
+                                <ul class="messages" style="margin-top: 100px">
+                                    {% for message in messages %}
+                                    <div class="alert alert-success">
+                                        <strong>Success!</strong> {{message}}
+                                    </div>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                <h3>Bình luận và Đánh giá:</h3>
+                                {%for rate in ratings%}
+                                <div class="user-comments">
+                                    <div class="logo">
+                                        <img src="{% static 'img/user.png' %}" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <div class="rate">
+                                            {% if user.id == rate.user_id %}
+                                            <span>{{rate.rating}} <i class="fa fa-star-o" style="color: yellow;"></i> <i
+                                                    class="fa-solid fa-circle-check" style="color: blue;"></i>
+                                                {{rate.time_rate}}
+                                            </span>
+                                            {% else %}
+                                            <span>{{rate.rating}} <i class="fa fa-star-o" style="color: yellow;"></i>
+                                                {{rate.time_rate}}</span>
+                                            {% endif %}
+                                        </div>
+                                        <div class="comment">
+                                            <p>{{rate.comment}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="map" style="margin-top: 100px;">
+                <h3>Vị trí:</h3>
+                <iframe src="{{place.place_map}}" frameborder="0" style="width: 100%; height: 500px;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {% include 'include-files/footer.html' %}
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--### CHAT BOT ###-->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+    <script>
+        var $star_rating = $('.star-rating .fa');
+
+        var SetRatingStar = function () {
+            return $star_rating.each(function () {
+                if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+                    return $(this).removeClass('fa-star-o').addClass('fa-star');
+                } else {
+                    return $(this).removeClass('fa-star').addClass('fa-star-o');
+                }
+            });
+        };
+        $star_rating.on('click', function () {
+            $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+            return SetRatingStar();
+        });
+
+        SetRatingStar();
+        // $(document).ready(function () {
+
+        // });
+
+        function validateForm() {
+            var x = document.forms["ratingForm"]["rating"].value;
+            if (x == "0") {
+                alert("Invalid Input");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

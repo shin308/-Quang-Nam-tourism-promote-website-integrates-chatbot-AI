@@ -1,0 +1,67 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Travelo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'include-files/links.html' %}
+
+</head>
+
+<body>
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    
+    <!--<div class="container-login100"   style="background-color:  #006699 ;">-->
+    <!--                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" style="width:900px;">-->
+    <div class="cl1" style="margin-bottom: 50px;">
+        <h2 style="text-align: center; margin-bottom: 10px;"> Chuyến đi sắp tới </h2>
+        <form action="otp_verification" method='POST'>
+            {%csrf_token%}
+            <table align='center' border="2px" cellpadding="10px">
+                <tr>
+                    <th>Mã chuyến đi</th>
+                    <th>Ngày chuyến đi</th>
+                    <th class="pipo">Tên</th>
+                    <th class="pipo">Họ</th>
+                    <th class="pipo1">Tuổi</th>
+                    <th class="pipo2">
+                        Điểm đến
+                    </th>
+                </tr>
+                {% for per in person %}
+                <tr>
+                    <td>
+                        {{per.Trip_same_id}}
+                    </td>
+                    <td>{{per.Trip_date}}</td>
+                    <td>{{per.first_name}}</td>
+                    <td>{{per.last_name}}</td>
+                    <td>{{per.age}}</td>
+                    <td>{{per.city}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    {% include 'include-files/footer.html' %}
+    
+    <!--</div>-->
+    <!-- Modal -->
+
+    <!-- Chatbot -->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+
+</body>
+
+</html>

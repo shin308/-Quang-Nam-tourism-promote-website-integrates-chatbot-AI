@@ -1,0 +1,666 @@
+{
+    "intents": [
+        {
+            "tag": "lời chào hỏi",
+            "patterns": [
+                "Hữu ích",
+                "Thật sự cảm ơn",
+                "Cảm ơn vì đã giúp tôi",
+                "Cám ơn bạn rất nhiều",
+                "Tôi thực sự rất trân trọng điều đó",
+                "Bạn thật chu đáo",
+                "Tôi thực sự rất biết ơn vì điều này",
+                "bye",
+                "Tạm biệt",
+                "hẹn gặp lại",
+                "Bái bai",
+                "Nói chuyện sau",
+                "Gặp lại sau"
+            ],
+            "responses": [
+                "Xin chào, có phải bạn đang cần thông tin du lịch tại Quảng Nam? Vui lòng nhập câu hỏi khác hoặc truy cập liên kết sau để có thông tin chi tiết <br><br> <a href='http://127.0.0.1:8000/' target='_blank' class='food'>Thông tin du lịch Quảng Nam</a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chào hỏi",
+            "patterns": [
+                "Chào bạn",
+                "xin chào",
+                "Chào"
+            ],
+            "responses": [
+                "xin chào, tôi có thể giúp gì cho bạn"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Tạm biệt",
+            "patterns": [
+                "bye",
+                "Tạm biệt",
+                "hẹn gặp lại",
+                "Bái bai",
+                "Nói chuyện sau",
+                "Gặp lại sau"
+            ],
+            "responses": [
+                "chúc bạn có một khoảng thời gian vui vẻ, chào mừng bạn quay lại lần nữa"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "cảm ơn",
+            "patterns": [
+                "cảm ơn",
+                "okay",
+                "Hữu ích",
+                "Thật sự cảm ơn",
+                "Cảm ơn vì đã giúp tôi",
+                "Cám ơn bạn rất nhiều",
+                "Tôi thực sự rất trân trọng điều đó",
+                "Bạn thật chu đáo",
+                "Tôi thực sự rất biết ơn vì điều này"
+            ],
+            "responses": [
+                "Rất vui được giúp đỡ bạn, bất cứ lúc nào bạn cần giúp cứ liên hệ tôi"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "Đặt vé máy bay",
+            "patterns": [
+                "Đặt vé máy bay trước bao lâu là hợp lý?",
+                "tôi nên đặt vé máy bay khi nào?",
+                "thời gian nên đặt vé máy bay",
+                "khi nào nên đặt vé máy bay?"
+            ],
+            "responses": [
+                "Thông thường, đối với tour nội địa, bạn có thể đặt mua vé trước ít nhất từ 2-3 tuần, còn đối với những chuyến bay quốc tế bạn nên đặt vé trước từ 1 đến 2 tháng. Tuyệt đối không đặt vé máy bay trong vòng 24h trước khi bay, bạn sẽ không thể nhận được mức giá tốt cũng như còn rất ít sự lựa chọn."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ẩm thực",
+            "patterns": [
+                "ẩm thực là gì?"
+            ],
+            "responses": [
+                "Câu hỏi của bạn chưa có câu trả lời chính xác, vui lòng nhập lại câu hỏi hoặc vào liên kết sau để tìm kiếm: <br> <a href = 'http://127.0.0.1:8000/foods' target='_blank' style='text-decoration: underline; color: white;'>Truy cập trang sau để biết thêm thông tin</a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "món ngon",
+            "patterns": [
+                "món ngon quảng nam",
+                "món ăn ngon ở quảng nam",
+                "các món ăn ngon",
+                "ăn gì ở quảng nam"
+            ],
+            "responses": [
+                "- Mỳ Quảng <br> - Cao lầu <br> - Bánh bao - bánh vạc <br> - Cơm gà <br> - Bánh ít lá gai, bánh su sê <br> - Bê thui Cầu Mống <br> - Gà tre đèo Le <br> - Phở sắn Đông Phú <br> - Bánh tráng cuốn thịt heo <br> - Mực cơm biển bãi ngang <br> - Bánh mì Hội An <br> - Cá chuồn xanh nướng. and",
+                "Bạn có thể xem thêm các món ăn đặc sản Quảng Nam ở đây: <br> <a href = 'http://127.0.0.1:8000/specialties' class='food' target='_blank'> Ẩm thực Quảng Nam </a>" 
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mỳ quảng",
+            "patterns": [
+                "mỳ quảng là gì?",
+                "món mỳ quảng",
+                "mỳ quảng"
+            ],
+            "responses": [
+                "Mỳ Quảng gắn liền với tên gọi của vùng đất Quảng Nam. Mỳ Quảng được chế biến từ bột gạo xay mịn hòa đều với nước theo một tỷ lệ nhất định. Điểm đặc biệt của món mì này so với các món mì thông thường là nước dùng chỉ tưới xăm xắp vừa chạm sợi mì chứ không đổ ngập. Nước dùng ăn cùng được chế biến từ nhiều loại nguyên liệu khác nhau: tôm, gà, thịt heo, thịt bò, cá lóc… and",
+                "Mỳ Quảng <br> <img src='/media/pics/specialties/myquang1.jpg' style='width: 100px; height: 100px;'>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "món ngon hội an",
+            "patterns": [
+                "món ngon ở hội an",
+                "món ăn ngon ở hội an",
+                "các món ăn ngon hội an",
+                "ăn gì ở hội an"
+            ],
+            "responses": [
+                "Chúng tôi xin đề xuất 1 số món ăn phổ biến: <br> +Cơm gà, Cao Lầu, Bánh mì, Bánh bao bánh vạc, Mì Quảng, nước Mót Hội An, Hến xào, bánh tráng đập, chè bắp ... <br><br> <button class='food' value='Mỳ Quảng' onclick='addValue($(this).val())'>Mỳ Quảng</button> <br> <button class='food' value='Cao lầu' onclick='addValue($(this).val())'>Cao lầu</button> <br> <button class='food' value='Bánh ít' onclick='addValue($(this).val())'>Bánh ít</button> <br> <button class='food' value='Bánh đậu xanh' onclick='addValue($(this).val())'>Bánh đậu xanh</button> <br> <button class='food' value='Bánh mì' onclick='addValue($(this).val())'>Bánh mì</button> <br> <button class='food' value='Cơm gà' onclick='addValue($(this).val())'>Cơm gà</button>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ẩm thực hội an",
+            "patterns": [
+                "ẩm thực ở hội an",
+                "món ăn ngon ở hội an",
+                "các món ăn ngon hội an"
+            ],
+            "responses": [
+                "Chúng tôi xin đề xuất 1 số món ăn phổ biến: <br> +Cơm gà, Cao Lầu, Bánh mì, Bánh bao bánh vạc, Mì Quảng, nước Mót Hội An, Hến xào, bánh tráng đập, chè bắp ... <br><br> <button class='food' value='Mỳ Quảng' onclick='addValue($(this).val())'>Mỳ Quảng</button> <br> <button class='food' value='Cao lầu' onclick='addValue($(this).val())'>Cao lầu</button> <br> <button class='food' value='Bánh ít' onclick='addValue($(this).val())'>Bánh ít</button> <br> <button class='food' value='Bánh đậu xanh' onclick='addValue($(this).val())'>Bánh đậu xanh</button> <br> <button class='food' value='Bánh mì' onclick='addValue($(this).val())'>Bánh mì</button> <br> <button class='food' value='Cơm gà' onclick='addValue($(this).val())'>Cơm gà</button>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "cao lầu hội an",
+            "patterns": [
+                "cao lầu hội an"
+            ],
+            "responses": [
+                "- Quán Cao lầu Thanh: 26 Thái Phiên, Minh An, Hội An- Điện thoại: 0235 2211909 <br> - Nhà hàng Trung Bắc: 87 Trần Phú, Minh An, Hội An - Điện thoại: 0235 3864622 <br> - Cao lầu ông Hai: 6A Trương Minh Lượng, Cẩm Châu, Hội An- Điện thoại: 0235 3914406 <br> - Cao lầu Bá Lễ: 45/3 Trần Hưng Đạo, Minh An, Hội An- Điện thoại: 0937691891. and",
+                "Cao lầu <br> <img src='/media/pics/specialties/caolau1.png' style='width: 100px; height: 100px;'>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "bánh mì hội an",
+            "patterns": [
+                "bánh mì hội an"
+            ],
+            "responses": [
+                "- Bánh Mì Phượng- 2B Phan Châu Trinh <br> - Bánh Mì Madam Khánh- 115 Trần Cao Vân <br> - Bánh Mì Bích- 51 Phan Châu Trinh <br> - Bánh Mì Cô Lành- 430 Cửa Đại <br> - Bánh mì Phố Cổ- 02 Lê Lợi, Minh An"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "bánh ít hội an",
+            "patterns": [
+                "bánh ít hội an",
+                "bánh ít lá gai"
+            ],
+            "responses": [
+                "- Bánh ít lá gái: Ngọc Thành, Hội An Điện thoại: 0932405315 <br> - Bánh ít lá gai - su sê: Ngã tư Nguyễn Duy Hiệu và Trần Nhân Tông Điện thoại: 0905453330 <br> - Quán bánh ít lá gai- su sê: 134 Nguyễn Thái Học."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "bánh đậu xanh hội an",
+            "patterns": [
+                "bánh đậu xanh hội an"
+            ],
+            "responses": [
+                "- Bánh Đậu Xanh Bà Trinh: 62 Lê Lợi, Minh An, Hội An- Điện thoại: 0235 3861780 <br> - Bánh đậu xanh Hội An: 195 Nguyễn Chí Thanh, Cẩm Hà - Điện thoại: 0916100125 <br> - Daichi Foods: 08 Cao Hồng Lanh, Cẩm Phô, Hội An- Điện thoại: 0235 6516 168 <br> - Bánh đậu xanh đặc sản Hội An: 10 Lê Lợi, Minh An. Điện thoại: 0934968508"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mỳ quảng hội an",
+            "patterns": [
+                "mỳ quảng hội an"
+            ],
+            "responses": [
+                "- Mỳ Quảng ông Hai: 6A Trương Minh Lượng, Cẩm Châu, Hội An - Điện thoại: 0235 3914406 <br> - Mỳ Quảng Bích: 272 Hùng Vương, Thanh Hà, Hội An - Điện thoại: 0905898184 <br> - Mỳ Quảng Quê Hương: 164/3 Lý Thường Kiệt, Sơn Phong, Hội An- ĐT: 091 7442 777 <br> - Mỳ Quảng Dì Hát: 81 Phan Chu Trinh, Minh An, Hội An- Điện thoại: 0934796172 and",
+                " Mỳ Quảng <br> <img src='/media/pics/specialties/myquang1.jpg' style='width: 100px; height: 100px;'>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "cơm gà hội an",
+            "patterns": [
+                "cơm gà hội an"
+            ],
+            "responses": [
+                "Cơm Gà Bà Buội- 22 Phan Châu Trinh <br> Cơm Gà Bà Nga- 08 Phan Châu Trinh <br> Cơm Gà Hương- Kiệt Sica- 56 Lê Lợi <br> Cơm Gà Long- 53/16 Phan Châu Trinh <br> Cơm gà Bà Lắm- Hẻm 51 Phan Châu Trinh <br> Cơm Gà Hiền- 593 Hai Bà Trưng. and",
+                "Cơm gà <br> <img src='/media/pics/specialties/comga1.jpg' style='width: 100px; height: 100px'>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "ẩm thực quảng nam",
+            "patterns": [
+                "ẩm thực quảng nam",
+                "đặc sản ẩm thực quảng nam",
+                "đa dạng ẩm thực của quảng nam"
+            ],
+            "responses": [
+                "- Mỳ Quảng <br> - Cao lầu <br> - Bánh bao - bánh vạc <br> - Cơm gà <br> - Bánh ít lá gai, bánh su sê <br> - Bê thui Cầu Mống <br> - Gà tre đèo Le <br> - Phở sắn Đông Phú <br> - Bánh tráng cuốn thịt heo <br> - Mực cơm biển bãi ngang <br> - Bánh mì Hội An <br> - Cá chuồn xanh nướng and",
+                "Bạn có thể xem thêm các món ăn đặc sản Quảng Nam ở đây: <br> <a href = 'http://127.0.0.1:8000/specialties' class='food' target='_blank'> Ẩm thực Quảng Nam </a>" 
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "đặt khách sạn",
+            "patterns": [
+                "Nên đặt khách sạn trước bao lâu?",
+                "tôi nên đặt khách sạn khi nào?",
+                "thời gian nên đặt khách sạn?",
+                "khi nào nên đặt khách sạn?"
+            ],
+            "responses": [
+                "Nên đặt phòng khách sạn ngay sau khi bạn đã chốt được lịch cho chuyến đi của mình. Bạn có thể đặt phòng trực tiếp với khách sạn, hoặc có thể nhờ đến những công ty du lịch lữ hành để nhận được mức giá tốt nhất. Không nên đặt phòng khách sạn ngay trước hôm bạn đi, sẽ rất khó để chọn được một phòng tốt và được hưởng mức giá ưu đãi từ phía khách sạn."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "du lịch hội an",
+            "patterns": [
+                "địa điểm du lịch ở hội an",
+                "du lịch hội an"
+            ],
+            "responses": [
+                "Khám phá Cù Lao Chàm - Đảo xanh quyến rũ. <br> Một ngày làm cư dân phố Hội với nghề làm đèn lồng. <br> Một ngày làm nông dân trồng rau Trà Quế. <br>Một ngày làm ngư dân làng chài Thanh Nam. <br>Tham quan làng nghề Hội An bằng xe đạp. <br>Du ngoạn trên sông Hoài. <br>Trải nghiệm học nấu ăn. <br>Khám phá Rừng dừa Bảy Mẫu bằng thuyền thúng… and",
+                "Các bạn tham tham khảo các chương trình tour ở đây nhé: <br> <a href = 'http://127.0.0.1:8000/tours-list' class='food' target='_blank'> Thông tin du lịch Quảng Nam </a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chợ ở hội an",
+            "patterns": [
+                "các chợ ở hội an",
+                "đi chợ nào ở hội an",
+                "địa chỉ các chợ ở hội an"
+            ],
+            "responses": [
+                "Hội An có 1 số chợ sau: <br> <button class='food' value='Chợ Hội An' onclick='addValue($(this).val())'>Chợ Hội An</button> <br> <button class='food' value='Chợ Cá Thanh Hà' onclick='addValue($(this).val())'>Chợ Cá Thanh Hà</button> <br> <button class='food' value='Chợ đêm Nguyễn Hoàng' onclick='addValue($(this).val())'>Chợ đêm Nguyễn Hoàng</button> <br> <button class='food' value='Chợ Viên Giác' onclick='addValue($(this).val())'>Chợ Viên Giác</button> <br> <button class='food' value='Chợ Bà Lê' onclick='addValue($(this).val())'>Chợ Bà Lê</button>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chợ hội an",
+            "patterns": [
+                "Chợ hội an",
+                "địa chỉ chợ hội an"
+            ],
+            "responses": [
+                "Đến tham quan du lịch và mua sắm ở Hội An thì không thể bỏ qua địa điểm này. Chợ Hội An nép mình bên dòng sông Hoài thơ mộng, cũng là một điểm nhấn rất khác biệt của đô thị cổ Hội An được UNESCO công nhận là Di sản văn hóa thế giới. <br> Địa chỉ: Chợ Hội An,  đường Trần Quý Cáp, Cẩm Châu, Hội An."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chợ cá thanh hà",
+            "patterns": [
+                "Chợ cá Thanh Hà",
+                "địa chỉ chợ cá thanh hà"
+            ],
+            "responses": [
+                "Chợ cá Thanh Hà Hội An là 1 trong những địa điểm buôn bán hải sản tấp nập, nhộn nhịp nhất tại Hội An. Vì chất lượng tiêu chuẩn, tươi sống mà nhiều bạn trẻ và du khách lựa chọn chợ cá Thanh Hà là nơi để đến mua quà hải sản về tặng gia đình bạn bè sau chuyến đi đến Hội An. <br> Địa chỉ: Phường Thanh Hà, Thành phố Hội An, Tỉnh Quảng Nam"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chợ đêm Nguyễn Hoàng",
+            "patterns": [
+                "Chợ đêm Nguyễn Hoàng",
+                "địa chỉ chợ đêm Nguyễn Hoàng"
+            ],
+            "responses": [
+                "Chợ Đêm Nguyễn Hoàng là tên mà người địa phương hay gọi, còn khách du lịch thì thường gọi là Chợ Đêm Hội An, là nơi mà hầu như những ai đi tour Hội An điều phải ghé qua hoặc để mua sắm hoặc để khám phá những sinh hoạt và những sản phầm mang đậm nét địa phương xứ quảng, Địa chỉ: 3 Nguyễn Hoàng, Phường Minh An, Hội An, Quảng Nam"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "amt hội an",
+            "patterns": [
+                "các cây atm ở hội an",
+                "rút tiền ở hội an",
+                "các cây atm gần hội an"
+            ],
+            "responses": [
+                "BIDV: 586, Cửa Đại, TP Hội An <br> BIDV: 05, Cửa Đại, Tp Hội An <br> BIDV: 51 Trần Hưng Đạo, Tp Hội An <br> MBBANK: Số 382 Cửa Đại, Phường Cẩm Châu, TP Hội An <br> MBBANK: 14 Nguyễn Tất Thành, Hội An, Quảng Nam <br> MBBANK: Số 594 Hai Bà Trưng, Hội An, Quảng Nam <br> VIETCOMBANK: 02 Trần Cao Vân, Hội An <br> VIETCOMBANK: 13 Phan Châu Trinh, Hội An, Quảng Nam <br> VIETCOMBANK: 06 Trần Hưng Đạo, Hội An."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "bệnh viện hội an",
+            "patterns": [
+                "các bệnh viện ở hội an",
+                "khám bệnh ở hội an",
+                "Chữa bệnh ở hội an"
+            ],
+            "responses": [
+                "Bệnh viện đa khoa TP Hội An: 4 Trần Hưng Đạo, Sơn Phong, Hội An, Quảng Nam"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "du lịch",
+            "patterns": [
+                "du lịch",
+                "du lịch quảng nam",
+                "điểm du lịch quảng nam"
+            ],
+            "responses": [
+                "Một số tour tham quan ở Quảng Nam: <br> - Khám phá Cù Lao Chàm - Đảo xanh quyến rũ. <br> - Một ngày làm cư dân phố Hội với nghề làm đèn lồng. <br> - Một ngày làm nông dân trồng rau Trà Quế. <br> Một ngày làm ngư dân làng chài Thanh Nam. <br> - Tham quan làng nghề Hội An bằng xe đạp. <br> - Du ngoạn trên sông Hoài. <br> - Trải nghiệm học nấu ăn. <br> - Khám phá Rừng dừa Bảy Mẫu bằng thuyền thúng. <br> - Khám phá du lịch sinh thái Triêm Tây. <br> - Khám phá làng quê Trà Nhiêu. <br> - Tham quan Phú Ninh và làng bích họa Tam Thanh. and",
+                "Các bạn tham tham khảo các chương trình tour ở đây nhé: <br> <a href = 'http://127.0.0.1:8000/tours-list' class='food' target='_blank'> Tours du lịch Quảng Nam </a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mua sắm",
+            "patterns": [
+                "mua sắm ở quảng nam",
+                "mua sắm",
+                "mua gì ở quảng nam"
+            ],
+            "responses": [
+                "Các sản phẩm thủ công mỹ nghệ như tranh thêu tay, tranh vẽ, điêu khắc tre, sản phẩm gốm, mộc, lụa, dệt thổ cẩm, đèn lồng… hay các loại đặc sản xứ Quảng: Yến sào, hạt tiêu, quế, bánh tráng, bánh đậu xanh, bánh dừa nướng, hải sản khô…"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mua sắm quế sơn",
+            "patterns": [
+                "mua sắm ở quế sơn",
+                "mua gì ở quế sơn",
+                "đến quế sơn nên mua gì?"
+            ],
+            "responses": [
+                "Phở sắn Quế Sơn <br> Bánh tráng sắn <br> Bánh tráng nhúng đường <br> Kẹo đậu phộng <br> Bánh quế dừa <br> Bánh dừa nướng"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mua sắm hội an",
+            "patterns": [
+                "mua sắm ở hội an",
+                "mua gì ở hội an",
+                "đến hội an nên mua gì?"
+            ],
+            "responses": [
+                "Các sản phẩm thủ công mỹ nghệ như tranh thêu tay, tranh vẽ, điêu khắc tre, sản phẩm gốm, mộc, lụa, dệt thổ cẩm, đèn lồng…  and",
+                "Các điểm mua sắm phổ biến ở Hội An: <br> <button class='food' value='Chợ Hội An' onclick='addValue($(this).val())'>Chợ Hội An</button> <br> <button class='food' value='Chợ Cá Thanh Hà' onclick='addValue($(this).val())'>Chợ Cá Thanh Hà</button> <br> <button class='food' value='Chợ đêm Nguyễn Hoàng' onclick='addValue($(this).val())'>Chợ đêm Nguyễn Hoàng</button> <br> <button class='food' value='Chợ Viên Giác' onclick='addValue($(this).val())'>Chợ Viên Giác</button> <br> <button class='food' value='Chợ Bà Lê' onclick='addValue($(this).val())'>Chợ Bà Lê</button>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "đặt tour",
+            "patterns": [
+                "Nên đặt tour khi nào?",
+                "Nên đặt tour trước bao lâu?",
+                "thời gian nên đặt tour",
+                "khi nào nên đặt tour?"
+            ],
+            "responses": [
+                "Thời điểm tuyệt vời nhất để bạn đặt tour đó là khi bạn đã sẵn sàng cho chuyến du lịch của mình, tham khảo giá của các công ty du lịch lữ hành, và lựa chọn một công ty du lịch uy tín để chuyến bay của bạn thuận lợi và an toàn nhất."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "chuyến bay bị hủy",
+            "patterns": [
+                "Nếu chuyến bay bị hủy, tôi nên làm gì đầu tiên?",
+                "làm gì khi chuyến bay bị hủy?",
+                "liên hệ với ai nếu chuyến bay bị hủy?",
+                "cách xử lý khi chuyến bay bị hủy?"
+            ],
+            "responses": [
+                "Trong trường hợp chuyến bay của bạn bị hủy, việc bạn nên làm ngay đó là đến quầy bán vé và trình bày về tình trạng hiện giờ của chuyến bay, để hãng hàng không sẽ sắp xếp đổi cho bạn sang giờ bay gần nhất.",
+                "Nếu bạn không may chuyến bay của bạn bị hủy, thì việc đầu tiên cần làm, là hãy đến quầy bán vé để được tư vấn chọn giải pháp. Trong lúc đó, bạn vừa có thể liên lạc bộ phận dịch vụ khách hàng để nhờ sự trợ giúp."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "khách sạn quế sơn",
+            "patterns": [
+                "khách sạn ở quế sơn",
+                "danh sách các khách sạn ở quế sơn",
+                "địa chỉ các khách sạn ở quế sơn",
+                "ở đâu tại quế sơn"
+            ],
+            "responses":[
+                "- Nhà nghỉ Mai Hương, Địa chỉ: 44 Đỗ Quang - Thị trấn Đông Phú, Điện thoại: 0905240593 <br> - Khách sạn Hoa Thiên, Địa chỉ: Quốc Lộ 1 A - thị trấn Hương An, Điện thoại : 0906151515 <br> - Nhà nghỉ Song Hương, Địa chỉ: Thị trấn Đông Phú, Điện thoại: 0907 245 034 <br> - Leeshin Hotel, Địa chỉ: 11 Lê Hữu Phận - thị trấn Đông Phú, Điện thoại: 02353885555 <br> - Nhà nghỉ Quang Lợi, Địa chỉ: 90 Trưng Nữ Vương - thị trấn Đông Phú, Điện thoại: 0772468564"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "khách sạn tam kỳ",
+            "patterns": [
+                "khách sạn ở tam kỳ",
+                "danh sách các khách sạn ở tam kỳ",
+                "địa chỉ các khách sạn ở tam kỳ",
+                "ở đâu tại tam kỳ"
+            ],
+            "responses":[
+                "- Khách sạn Mường Thanh Tam Kỳ Địa chỉ: 351A Hùng Vương, phường An Sơn Điện thoại: 0235 3555 222 <br> - Khách sạn Lê Dung Địa chỉ: 32 Trần Phú, phường Tân Thạnh Điện thoại: 0235 2249 999 <br> - Khách sạn Hoàng Ngọc, Địa chỉ: 52 Trưng Nữ Vương Phường Tân Thạnh, Điện thoại: 0907 245 034 <br> - Tam Thanh Beach Resort & Spa Địa chỉ: Thôn Hạ Thanh, xã Tam Thanh Điện thoại: 0235 6256 666 <br> - Ba Cơ Boutique Hotel Địa chỉ: Thôn Hòa Hạ, xã Tam Thanh Điện thoại: 0235 3837 838 <br> - Khách sạn ven sông Bàn Thạch Địa chỉ: 10 Bạch Đằng, phường Tân Thạnh Điện thoại: 0235 3595 999"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "khách sạn hội an",
+            "patterns": [
+                "khách sạn ở hội an",
+                "danh sách các khách sạn ở hội an",
+                "địa chỉ các khách sạn ở hội an",
+                "ở đâu tại hội an"
+            ],
+            "responses":[
+                "- DK's Hotel Địa chỉ:  308 Nguyễn Duy Hiệu, Cẩm Châu, Hội An, Quảng Nam Điện thoại: 0235 3555 222 <br> - Golden River Hotel  Địa chỉ: An Hội, Minh An, Tp. Hội An, Quảng Nam <br> - Huy Hoang River Hotel, Địa chỉ: 73 Phan Bội Châu, Sơn Phong, Tp. Hội An, Quảng Nam, Điện thoại: 0907 245 034 <br> - Sun Boat Hotel, Địa chỉ: 54 Huyền Trân Công Chúa, Cẩm Châu, Thành phố Hội An, Quảng Nam, Điện thoại: 0235 6256 666"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "homestay hội an",
+            "patterns": [
+                "địa chỉ homestay ở hội an",
+                "danh sách các homestay ở hội an",
+                "homestay ở hội an"
+            ],
+            "responses":[
+                "- THE HOI AN HIPPIE HOUSE Địa chỉ: Tổ 5, Khối An Bang, Phường Cẩm An Điện thoại: 0235 3555 222 <br> - Mama's House Homestay Địa chỉ: 06 Nguyễn Đức Cảnh, Tân An, Hội An Điện thoại: 0235 2249 999 <br> - Ha My Seaside Homestay, Địa chỉ: Lạc Long Quân, Cẩm Thanh, Điện thoại: 0907 245 034 <br> - Tân Phương Homestay Địa chỉ: 71 Thích Quảng Đức, Tân An Điện thoại: 0235 6256 666"
+            ],
+            "context":[
+                ""
+            ]
+        },
+        {
+            "tag": "hội an",
+            "patterns": [
+                "hội an",
+                "về tp hội an",
+                "thông tin về tp hội an",
+                "Hội an là thành phố thế nào?"
+            ],
+            "responses": [
+                "Hội An là một thành phố trực thuộc tỉnh Quảng Nam, Việt Nam. Phố cổ Hội An từng là một thương cảng quốc tế sầm uất, gồm những di sản kiến trúc đã có từ hàng trăm năm trước, được UNESCO công nhận là di sản văn hóa thế giới từ năm 1999. and",
+                "Bạn có thể xem các tour du lịch ở Hội An ở đây: <br> <a href = 'http://127.0.0.1:8000/destination_list/H%E1%BB%99i%20An' class='food' target='_blank'>Các Tours du lịch Hội An </a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "công an hội an",
+            "patterns": [
+                "công an hội an",
+                "địa chỉ công an tp hội an",
+                "công an thành phố hội an ở đâu",
+                "báo công an ở đâu tại hội an"
+            ],
+            "responses": [
+                "Đây là địa chỉ của các cơ quan công an trên địa bàn TP Hội An: <br> Công an Tp. Hội An: 06 Ngô Gia Tự, Sơn Phong, Hội An, Quảng Nam. SĐT: 02353861204 <br> Công An Phường Cửa Đại: Âu Cơ, Cửa Đại, Hội An, Quảng Nam. SĐT: 02353863063 <br> Công An Phường Cẩm An: Lạc Long Quân, Cẩm An, Tp. Hội An, Quảng Nam. SĐT: 02353927361"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "quảng nam",
+            "patterns": [
+                "quảng nam",
+                "về tỉnh quảng nam",
+                "thông tin về tỉnh quảng nam",
+                "quảng nam là tỉnh thế nào?"
+            ],
+            "responses": [
+                "Quảng Nam là một tỉnh thuộc vùng Duyên hải Nam Trung Bộ, Việt Nam. <br> Tỉnh lỵ của Quảng Nam đặt tại thành phố Tam Kỳ, có đô thị phố cổ Hội An. Quảng Nam nằm ở khoảng giữa Hà Nội và thành phố Hồ Chí Minh tính theo đường Quốc lộ 1A. <br><br> Tỉnh Quảng Nam diện tích 10.438 km², dân số năm 2019 là 1.495.812 người[3], mật độ dân số đạt 149 người/km². <br>Vui lòng truy cập site thông tin cổng du lịch để được hỗ trợ thêm: <br> <a href = 'http://127.0.0.1:8000/' class='food' target='_blank'>Cổng thông tin du lịch</a>"
+            ],
+            "context": [
+                ""
+            ]
+        },
+
+        {
+            "tag": "Visa du lịch",
+            "patterns": [
+                "Làm thế nào để xin Visa du lịch?",
+                "tôi muốn xin Visa du lịch?",
+                "cách để xin Visa du lịch?",
+                "liên hệ với ai để xin Visa du lịch?",
+                "Để xin visa thuận lợi? "
+            ],
+            "responses": [
+                "Để việc xin visa du lịch thuận lợi nhất, bạn nên tìm hiểu kỹ về quy định cấp visa của nước bạn đến. Bạn có thể liên hệ với đại sứ quán để nộp hồ sơ trực tiếp.",
+                "Trước khi xin, bạn nên tìm hiểu về quy định xin visa của nước đến. Ví dụ như nước đó có đề nghị visa hay không, thường được cấp trong thời hạn bao lâu, đề nghị cụ thể khi xin là gì… Bạn cũng có thể thực hiện cuộc gọi điện đến lãnh sự quán hoặc đặt lịch hẹn để được chỉ dẫn về việc nộp hồ sơ qua nhà mạng hay phải đến trực diện. Phí xin visa tùy theo từng nước nên có mức khác nhau, mà bạn nên tham khảo trước."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "bảo hiểm du lịch",
+            "patterns": [
+                "Có nên mua bảo hiểm khi đi du lịch không?",
+                "việc mua bảo hiểm khi đi du lịch có cần thiết không?",
+                "Khi nào thì cần bảo hiểm du lịch?"
+            ],
+            "responses": [
+                "Bạn hoàn toàn nên đầu tư cho việc mua bảo hiểm trước khi đi du lịch. Chúng giúp bạn cảm thấy yên tâm hơn trước mỗi chuyến đi."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "hành lý bị trễ",
+            "patterns": [
+                "Nên làm gì khi hành lý bị trễ?",
+                "liên hệ với ai nếu hành lý bị trễ?",
+                "cách xử lý khi hành lý bị trễ?"
+            ],
+            "responses": [
+                "Khi bạn đã đến sân bay mà hành lý vẫn chưa đến băng chuyền, việc đầu tiên bạn nên làm đó là liên hệ với nhân viên hàng không, họ sẽ giúp bạn kiểm tra mã hành lý và giúp bạn lấy lại hành lý của mình."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "vật dụng cần thiết",
+            "patterns": [
+                "mang vật dụng gì khi đi du lịch?",
+                "những vật dụng cần thiết khi đi du lịch",
+                "những thứ cần mang theo khi đi du lịch",
+                "đi du lịch nên mang theo những gì",
+                "Đi du lịch nên mang theo những vật dụng nào?"
+            ],
+            "responses": [
+                "Đầu tiên là những đồ dùng sinh hoạt cá nhân đều được chuẩn bị tại khách sạn, nhưng nếu bạn không quen sử dụng những thứ mà khách sạn đưa cho thì hãy mang theo những thứ đó từ nhà nhé. Hãy mang theo những thứ đơn giản như kính râm, bộ trang điểm, giày dép gọn nhẹ. Một số vật dụng hết sức cần thiết và không thể thiếu trong hành trình của bạn phải kể đến như giấy tờ tùy thân, điện thoại, máy ảnh, máy tính (nếu cần), đồ sạc các thiết bị trên, cục sạc dự phòng, ổ cắm đa quốc gia..."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "quần áo",
+            "patterns": [
+                "Nên mang theo bao nhiêu bộ quần áo?",
+                "số lượng quần áo cần mang theo",
+                "nên chuẩn bị quần áo như thế nào",
+                "mang quần áo như thế nào là thích hợp"
+            ],
+            "responses": [
+                "Đầu tiên bạn phải xác dịnh mình đi bao nhiêu ngày, tiếp theo hãy theo dõi diễn biến thời tiết của nơi mình sẽ đến để có thể sắp xếp vali quần áo một cách khoa học và chuẩn xác nhất nhé. Tuy nhiên, bạn vẫn phải chuẩn bị ít nhất 2 áo khoác, găng tay, tất chân và khăn choàng. Đây là những thứ cần thiết để khi xuống sân bay bạn không bị sốc vì thay đổi khí hậu đột ngột."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "thuốc",
+            "patterns": [
+                "Có nên mang theo thuốc hay không?",
+                "những thuốc cần mang khi đi du lịch",
+                "nên chuẩn bị theo thuốc gì"
+            ],
+            "responses": [
+                "bạn cần mang theo những loại thuốc đơn giản có thể đáp ứng ngay cho sức khỏe bản thân mình như thuốc đau bụng, đau đầu, cảm cúm, dầu gió hay bông băng. Đối với những người có bệnh mãn tính thì đừng quên những lọ thuốc đặc trị của họ  nhé."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "mua vé máy bay tiết kiệm",
+            "patterns": [
+                "Mua vé máy bay thế nào cho tiết kiệm?",
+                "làm sao để mua được vé máy bay giá rẻ",
+                "cách săn vé máy bay giá rẻ"
+            ],
+            "responses": [
+                "Nên tìm và đặt mua vé máy bay sớm nhất có thể để săn được những vé máy bay giá rẻ từ các hãng hàng không. Đừng bỏ qua những khuyến mãi thường niên của các hãng hàng không uy tín để có được một hành trình với chất lượng cao nhất nhưng với giá rẻ nhất nhé.."
+            ],
+            "context": [
+                ""
+            ]
+        }
+    ]
+}

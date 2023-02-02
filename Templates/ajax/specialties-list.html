@@ -1,0 +1,14 @@
+{% for spec in data %}
+<div class="col-lg-4 col-md-6">
+    <div class="single_place">
+        <div class="thumb">
+            <img src="/media/pics/specialties/{{spec.img1}}" alt="" style="height: 160px;">
+        </div>
+        <div class="place_info text-center">
+            <a href='specialties/{{spec.spec_id}}'>
+                <h4>{{spec.spec_name}}</h4>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

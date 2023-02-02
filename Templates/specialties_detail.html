@@ -1,0 +1,500 @@
+{% load static %}{% static "images" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QN Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/specialties_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/themify-icons/themify-icons.css' %}">
+    {% include 'include-files/links.html' %}
+
+</head>
+
+<body>
+
+    <!-- header-start -->
+    {% include 'include-files/header.html' %}
+    <!-- header-end -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <form class="contain ">
+                    <div class="contain-logo">
+                        <h1>{{spec.spec_name}}</h1>
+                        <hr width="100%" />
+                        <div>
+                            <img src="{% static 'img/specialties/icon6.png' %}" style="width: 15px; height: 15px; ">
+                            <p style="display: inline;">11/11/2019</p>
+                            <hr width="100%" />
+                        </div>
+
+
+                        <div class="contain-logo1">
+                            <img src="{% static 'img/specialties/icon1.png' %}">
+                            <img src="{% static 'img/specialties/icon2.png' %}">
+                            <img src="{% static 'img/specialties/icon3.png' %}">
+                            <img src="{% static 'img/specialties/icon4.png' %}">
+                            <img src="{% static 'img/specialties/icon5.png' %}">
+
+                        </div>
+                        <div class="contain1">
+                            <p>{{spec.desc1}}</p>
+                            <img src="/media/pics/specialties/{{spec.img1}}" alt="">
+                            <!-- <p>Ăn cùng Mỳ Quảng không thể thiếu bánh tráng nướng, trái ớt xanh, lát chanh, vài
+                                hạt đậu phộng rang và đĩa rau sống đi kèm. Rau sống đặc biệt với búp chuối sứ thái
+                                mỏng, rau thơm, rau quế…Mỳ Quảng được Tổ chức Kỷ lục Châu Á công nhận món ngon đạt
+                                giá trị ẩm thực Châu Á.</p> -->
+                            <img src="/media/pics/specialties/{{spec.img2}}">
+
+                        </div>
+
+                        <div class="contain-logo2" style="padding: 10px 0;">
+                            <i>Du khách có thể tìm đến các quán sau:</i>
+                            <div class="contain-logo3">
+                                <!-- <b>{{spec.address}}</b> -->
+                                <p>{{spec.address}}</p>
+                                <hr>
+
+                                <b>Mỳ Quảng Bích</b>
+                                <p>Địa chỉ: 6A Trương Minh Lượng, Cẩm Châu, thành phố Hội An <br />
+                                    Điện thoại: 0905.898184</p>
+
+                                <b>Mỳ Quảng 92</b>
+                                <p>Địa chỉ: 71 Trần Hưng Đạo, thành phố Hội An <br />
+                                    Điện thoại: 0905.614007</p>
+
+                                <b>Mỳ Quảng Dì Hát</b>
+                                <p>Địa chỉ: 81 Phan Chu Trinh, thành phố Hội An.<br />
+                                    Điện thoại: 0934.796172</p>
+
+                                <b>Mỳ Quảng Gia truyền Bà Dậu</b>
+                                <p>Địa chỉ: 551 Trần Cao Vân, thành phố Tam Kỳ <br />
+                                    Điện thoại: 0235.3858048</p>
+
+                                <b>Mỳ Quảng Giao Thủy</b>
+                                <p>Địa chỉ: 95-97 Trần Quý Cáp, thành phố Tam Kỳ<br />
+                                    Điện thoại: 0905.111527 - 0935.422666</p>
+
+                                <b>Mỳ Quảng Tiếng Quý</b>
+                                <p>Địa chỉ: QL 14H, xã Duy Châu, huyện Duy Xuyên <br />
+                                    Điện thoại: 0905.195344</p>
+
+                                <b>Mỳ Quảng Mỹ Sơn</b>
+                                <p>Địa chỉ: QL 14H, xã Duy Châu, huyện Duy Xuyên <br />
+                                    Điện thoại: 0987.334755</p>
+
+                                <b>Mỳ Quảng Quê Hương</b>
+                                <p>Địa chỉ: 164/3B Lý Thường Kiệt, thành phố Hội An <br />
+                                    Điện thoại: 0917.442777</p>
+
+                            </div>
+
+                            <!-- <hr /> -->
+
+                            <!-- <div class="contain-logo4">
+                                <h2>Bài viết liên quan</h2>
+
+                                <ul>
+                                    <div class="logo5">
+                                        <li>Phở sắn Đông Phú</li>
+                                        <div class="logo6">
+                                            <i class="ti-notepad"></i>
+                                            <p style="margin-top: 17px; margin-left: 5px;">7/12/2022</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="logo5">
+                                        <li>Bánh đậu xanh Hội An</li>
+                                        <div class="logo6">
+                                            <i class="ti-notepad"></i>
+                                            <p style="margin-top: 17px; margin-left: 5px;">7/12/2022</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="logo5">
+                                        <li>Chè bắp - bắp nếp Cẩm Nam </li>
+                                        <div class="logo6">
+                                            <i class="ti-notepad"></i>
+                                            <p style="margin-top: 17px; margin-left: 5px;">7/12/2022</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="logo5">
+                                        <li>Cao lầu Hội An</li>
+                                        <div class="logo6">
+                                            <i class="ti-notepad"></i>
+                                            <p style="margin-top: 17px; margin-left: 5px;">7/12/2022</p>
+                                        </div>
+                                    </div>
+
+                                </ul>
+
+                            </div> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col-sm-4">
+                <form class="contain">
+
+                    <!-- part1 -->
+
+                    <div class="container card shadow d-flex justify-content-center mt-5">
+                        <!-- nav options -->
+                        <ul class="nav nav-pills mb-3 shadow-sm" id="pills-tab" role="tablist">
+                            <li class="nav-item" style="margin-left: 50px;">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                    role="tab" aria-controls="pills-home" aria-selected="true">TIN MỚI NHẤT</a>
+                            </li>
+                            <li class="nav-item" style="margin-left: 50px;">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                    role="tab" aria-controls="pills-profile" aria-selected="false">TIN NỔI BẬT</a>
+                            </li>
+
+                        </ul>
+
+                        <!-- content -->
+                        <div class="tab-content" id="pills-tabContent p-3">
+                            <!-- 1st card -->
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab" style="margin-left: 10px; margin-right: 10px;">
+                                <form class="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search..." />
+                                </form>
+
+                                <div class="contain-bantin">
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Năm du lịch quốc gia - Quảng Nam 2022: Dấu ấn để lại...</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin1.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Cổng Trời Đông Giang nhiều thác nước tự nhiên nhất Việt Nam</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin2.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Sắc lụa Hội An</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin3.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>"Di sản du lịch xanh - Nơi gặp gỡ con người và thiên nhiên"</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin4.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Khám phá Cù Lao Chàm – Hòn ngọc xứ Quảng</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/bantin5.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>10 tháng, Quảng Nam đón khoảng 4,4 triệu lượt khách</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!-- 2nd card -->
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab" style="margin-left: 10px; margin-right: 10px
+                    ;">
+                                <form class="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search..." />
+                                </form>
+
+                                <div class="contain-bantin">
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Check in cháy máy với các điểm sống ảo ở Hội An đẹp như mơ</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac1.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Quảng bá du lịch Quảng Nam tại Hà Nội, TP.Hồ Chí Minh</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac2.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>‘Chill’ hết nấc tại những quán cà phê view đồng lúa Hội An đẹp miễn
+                                                bàn</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac3.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Những món ăn biểu tượng du lịch Quảng Nam</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac4.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Hội An đứng đầu 15 thành phố tuyệt vời nhất thế giới</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/noibac5.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Năm du lịch quốc gia - Quảng Nam 2022: Dấu ấn để lại...</b><br>
+                                            <i class="ti-world"></i> 20/12/2022
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <hr />
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- part2 ẩm thực-->
+
+                    <div class="container card shadow d-flex justify-content-center mt-5">
+                        <!-- nav options -->
+                        <ul class="nav nav-pills mb-3 shadow-sm" id="pills-tab" role="tablist">
+                            <li class="nav-item" style="margin-left: 50px;">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                    role="tab" aria-controls="pills-home" aria-selected="true">ẨM THỰC</a>
+                            </li>
+
+                        </ul>
+
+                        <!-- content -->
+                        <div class="tab-content" id="pills-tabContent p-3">
+                            <!-- 1st card -->
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab" style="margin-left: 10px; margin-right: 10px;">
+                                <form class="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search..." />
+                                </form>
+
+                                <div class="contain-amthuc">
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Cơm gà Bà Luận</b><br>
+                                            <i class="ti-location-pin">141-143 Trưng Nữ Vương, Tam Kỳ, Quảng Nam</i>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc1.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Nhà Hàng 7 mẫu</b><br>
+                                            <i class="ti-location-pin">112 Nguyễn Thái Học, Hội An</i>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc2.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Quán Nia</b><br>
+                                            <i class="ti-location-pin">387 Hùng Vương, Tp. Tam Kỳ, Quảng Nam</i>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc3.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Lẩu và nướng Anh Boa</b><br>
+                                            <i class="ti-location-pin">11 La Hối– Quảng Nam</i>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc4.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Trà sữa Teen Teen</b><br>
+                                            <i class="ti-location-pin">quán Teen Teen 559 Phan Châu Trinh, Tam Kỳ</i>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-amthuc1">
+                                        <img src="{% static 'img/specialties/amthuc5.png' %}">
+                                        <div class="contain-amthuc2">
+                                            <b>Bê thui Cầu Mống</b><br>
+                                            <i class="ti-location-pin">Cầu Mống, QL1, Điện Bàn, Quảng Nam</i> 20/12/2022
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- 2nd card -->
+
+                            <hr />
+
+
+                        </div>
+
+
+                    </div>
+
+                    <hr />
+
+
+                    <!-- part3 -->
+
+                    <div class="container card shadow d-flex justify-content-center mt-5">
+                        <!-- nav options -->
+                        <ul class="nav nav-pills mb-3 shadow-sm" id="pills-tab" role="tablist">
+                            <li class="nav-item" style="margin-left: 50px;">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                    role="tab" aria-controls="pills-home" aria-selected="true">ĐỊA ĐIỂM</a>
+                            </li>
+
+                        </ul>
+
+                        <!-- content -->
+                        <div class="tab-content" id="pills-tabContent p-3">
+                            <!-- 1st card -->
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab" style="margin-left: 10px; margin-right: 10px;">
+                                <form class="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search..." />
+                                </form>
+
+                                <div class="contain-diadiem">
+                                    <div class="contain-diadiem1">
+                                        <img src="{% static 'img/specialties/diadiem.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Địa điểm du lịch đỉnh Quế</b>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem1.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Suối Tiên Quế Sơn</b>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem2.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Quần thể tượng đài Việt Nam Anh Hùng</b>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem3.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Vườn rau Trà Quế</b><br>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem4.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Khu dự trữ sinh quyển thế giới-Cù Lao Chàm Hội An</b>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem5.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Làng Bích Họa Tam Thanh </b>
+                                        </div>
+                                    </div>
+
+                                    <div class="contain-bantin1">
+                                        <img src="{% static 'img/specialties/diadiem6.png' %}">
+                                        <div class="contain-bantin2">
+                                            <b>Thánh Địa Mỹ Sơn - Di sản văn hóa thế giới</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd card -->
+                            <hr />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    {% include 'include-files/footer.html' %}
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--### CHAT BOT ###-->
+    {% include 'include-files/chatbot.html' %}
+
+    <!-- Scripts -->
+    {% include 'include-files/scripts.html' %}
+
+</body>
+
+</html>

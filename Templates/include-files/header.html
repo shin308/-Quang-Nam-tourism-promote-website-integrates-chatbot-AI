@@ -1,0 +1,89 @@
+{% load static %}{% static "images" as baseUrl %}
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="{% static 'img/logo2.png' %}" alt="" style="width: 160px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="/">Trang chủ</a></li>
+                                        <li><a href="/about">Về Quảng Nam</a></li>
+                                        <li><a href="/places">Khu, điểm du lịch</a>
+                                            <!-- <ul class="submenu">
+                                                <li><a href="#">Thiên nhiên</a></li>
+                                                <li><a href="#">Văn hoá</a></li>
+                                                <li><a href="#">Du lịch nông nghiệp</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li><a href="/tours-list">Tours</a>
+                                        <li><a href="/upcoming_trips">Chuyến đi sắp tới</a></li>
+                                        <li><a href="/specialties">Ẩm thực</a></li>
+
+                                        <span class="user" style="margin-left: 50px;">
+                                            {% if user.is_authenticated %}
+                                            <li> <img src="{% static 'img/user.png' %}" alt="" style="width: 30px; border-radius: 10px;"> <a href="/user/{{user.id}}">Chào, {{user.last_name}} {{user.first_name}}</a></li>
+                                            <!-- <li><a href="/logout">Đăng xuất</a></li> -->
+                                            {%else%}
+                                            <li><a href="/login">Đăng nhập</a></li>
+                                            <li><a href="/register">Đăng ký</a></li>
+                                            {%endif%}
+                                        </span>
+                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="blog">blog</a></li>
+                                                <li><a href="blog">single-blog</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <li><a href="contact.html"></a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="social_wrap d-flex align-items-center justify-content-end">
+                                <div class="number">
+                                    <p> <i class="fa fa-phone"></i> 0261-25569</p>
+                                </div>
+
+                                <div class="social_links d-none d-xl-block">
+                                    <ul>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-google-plus"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>

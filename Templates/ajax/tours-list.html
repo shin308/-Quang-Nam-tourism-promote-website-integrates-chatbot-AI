@@ -1,0 +1,30 @@
+{% for dest in data %}
+<div class="col-lg-4 col-md-6 tour-box">
+    <div class="single_place">
+        <div class="thumb">
+            <img src="/media/pics/tours/{{dest.img1}}" alt="" style="height: 220px;">
+            <a href='destination_details/{{dest.dest_id}}' class="prise">{{dest.price}}VNĐ</a>
+        </div>
+        <div class="place_info">
+            <a href='destination_details/{{dest.dest_id}}'>
+                <h3>{{dest.dest_name}}</h3>
+            </a>
+            <p>{{dest.country}}</p>
+            <div class="rating_days d-flex justify-content-between star-rating">
+                <span class="d-flex justify-content-center align-items-center">
+                    {{dest.rating}}<i class="fa fa-star-o" data-rating="1" style="margin-left: 3px;"></i>
+                    <!-- <i class="fa fa-star-o" data-rating="1"></i>
+                    <i class="fa fa-star-o" data-rating="1"></i>
+                    <i class="fa fa-star-o" data-rating="1"></i>
+                    <i class="fa fa-star-o" data-rating="1"></i> -->
+                    <!-- <a href="#">(20 Review)</a> -->
+                </span>
+                <div class="days">
+                    <i class="fa fa-clock-o"></i>
+                    <a href='destination_details/{{dest.dest_id}}'>{{dest.days}} Days</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}
